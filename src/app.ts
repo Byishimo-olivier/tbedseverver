@@ -50,7 +50,7 @@ app.use(
 );
 app.use(
   cors({
-    origin: true,
+    origin: ["https://www.tbed.rw", "https://tbed.rw"],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     allowedHeaders: [
