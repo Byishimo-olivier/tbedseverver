@@ -1,0 +1,65 @@
+# Application
+NODE_ENV=development
+PORT=4000
+API_URL=https://api.infrasoko.com
+BACKEND_URL=https://api.infrasoko.com
+
+# Database
+# MONGODB_URI=mongodb://localhost:27017/construction-management
+MONGODB_URI=mongodb+srv://Laurent:sh%40d0w123@cluster0.yrzas.mongodb.net/construction-management?retryWrites=true&w=majority
+
+
+# Authentication
+JWT_SECRET=3456789oiujhgfdsbgnm,klo7865432356
+JWT_EXPIRES_IN=7d
+
+# Logging
+LOG_LEVEL=info
+
+# CORS
+CORS_ORIGIN=http://localhost:4545,https://infrasoko.vercel.app,https://backend-uhdl.onrender.com,https://www.infrasoko.com
+
+# Rate Limiting
+RATE_LIMIT_WINDOW_MS=900000
+RATE_LIMIT_MAX_REQUESTS=100
+
+#SMTP_HOST=live.smtp.mailtrap.io
+#SMTP_PORT=587
+#EMAIL_FROM=infrasoko@ivainqueur.dev
+#SMTP_USER=smtp@mailtrap.io
+#SMTP_PASS=94d3c335cc8a98de88c84a1f9f412e14
+
+SMTP_HOST=live.smtp.mailtrap.io
+SMTP_PORT=587
+EMAIL_FROM=info@infrasoko.com
+SMTP_USER=smtp@mailtrap.io
+SMTP_PASS=15bd423a3610d6ccf5dc3f25119021b2
+
+
+FRONTEND_URL=http://localhost:4545
+
+# Cloudinary Configuration
+CLOUDINARY_CLOUD_NAME=dj5wmrycr
+CLOUDINARY_API_KEY=597844839176293
+CLOUDINARY_API_SECRET=AZuImmzVY1CbkSNOjOYZdJ6QG6k
+CLOUDINARY_URL=cloudinary://597844839176293:AZuImmzVY1CbkSNOjOYZdJ6QG6k@dj5wmrycr
+
+# MTN MoMo Configuration
+MOMO_HOST=https://sandbox.momodeveloper.mtn.com
+MOMO_SUBSCRIPTION_KEY=a59d4597fb3c404caddc1196644082b4
+MOMO_API_USER=10131596-4fda-41ba-a78f-558f67dc6c09
+MOMO_API_KEY=b972dcb5bb044658b82834cdf3cfcd7f
+MOMO_ENVIRONMENT=sandbox
+MOMO_CURRENCY=EUR
+
+# Pawapay
+PAWAPAY_API_TOKEN=eyJraWQiOiIxIiwiYWxnIjoiRVMyNTYifQ.eyJ0dCI6IkFBVCIsInN1YiI6IjE4Mjc0IiwibWF2IjoiMSIsImV4cCI6MjA4OTYxMjAyNywiaWF0IjoxNzczOTkyODI3LCJwbSI6IkRBRixQQUYiLCJqdGkiOiI2NTgwMTM4Yy00MWI5LTQxNDAtOTQ1My1mOTE3ZGQwYThkYTEifQ.WR1b_4AuvJZiw644igs7oXJaGoSrS156d-I_-JQUGkJo1MiJHWkC3f_zDKdUmQ4YwgkVkctkJGujwAy57iQywg
+PAWAPAY_BASE_URL=https://api.sandbox.pawapay.io
+
+#Pesapal
+PESAPAL_BASE_URL=https://cybqa.pesapal.com/pesapalv3
+PESAPAL_OAUTH_URL=https://cybqa.pesapal.com/pesapalv3/api/Auth/RequestToken
+PESAPAL_IPN_URL=https://cybqa.pesapal.com/pesapalv3/api/URLSetup/RegisterIPN
+PESAPAL_CONSUMER_KEY=wCGzX1fNzvtI5lMR5M4AxvxBmLpFgZzp
+PESAPAL_CONSUMER_SECRET=uU7R9g2IHn9dkrKDVIfcPppktIo=
+API_BASE_URL=http://localhost:4000

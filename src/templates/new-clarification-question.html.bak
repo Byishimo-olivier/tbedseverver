@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Tender Question</title>
+    <style>
+      :root {
+        --primary-color: #ed8936;
+        --secondary-color: #dd6b20;
+        --text-color: #1f2937;
+        --background-light: #f8fafc;
+        --white: #ffffff;
+      }
+      body { font-family: sans-serif; margin: 20px; background-color: var(--background-light); }
+      .email-wrapper { max-width: 600px; margin: auto; background-color: var(--white); border-radius: 8px; overflow: hidden; }
+      .email-header { background-color: var(--primary-color); color: var(--white); padding: 40px; text-align: center; }
+      .email-title { font-size: 28px; font-weight: 700; }
+      .email-content { padding: 40px 30px; }
+      .greeting { font-size: 18px; font-weight: 600; margin-bottom: 24px; }
+      .info-card { background-color: #fffaf0; border-left: 4px solid var(--primary-color); padding: 20px; margin: 24px 0; border-radius: 8px; }
+      .cta-button { display: inline-block; background-color: var(--primary-color); color: var(--white) !important; text-decoration: none; padding: 16px 32px; border-radius: 8px; font-weight: 600; }
+      .email-footer { text-align: center; padding: 30px; font-size: 13px; color: #6b7280; }
+    </style>
+</head>
+<body>
+    <div class="email-wrapper">
+        <div class="email-header">
+            <h1 class="email-title">❓ New Question on Tender</h1>
+        </div>
+        <div class="email-content">
+            <div class="greeting">Hello {{tenderManagerName}},</div>
+            <p>A bidder has submitted a question regarding <strong>{{tenderTitle}}</strong>. Your response is required.</p>
+            <div class="info-card">
+                <h3>Question:</h3>
+                <p>"{{question}}"</p>
+            </div>
+            <div style="text-align: center; margin: 32px 0;">
+                <a href="{{clarificationLink}}" class="cta-button">Answer Question</a>
+            </div>
+        </div>
+        <div class="email-footer">
+            <p>&copy; {{year}} Infrasoko. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

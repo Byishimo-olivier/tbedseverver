@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" style="margin: 0; padding: 0; box-sizing: border-box;">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Approved</title>
+    <style>
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(56, 161, 105, 0.4);
+}
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .email-header {
+    padding: 30px 20px;
+  }
+
+  .email-content {
+    padding: 30px 20px;
+  }
+
+  .email-footer {
+    padding: 20px;
+  }
+
+  .cta-button {
+    display: block;
+    margin: 16px 0;
+  }
+}
+</style>
+  </head>
+  <body style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #1f2937; background-color: #f1f5f9; margin: 0; padding: 20px;">
+    <div class="email-wrapper" style="padding: 0; box-sizing: border-box; max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);">
+      <!-- Header with Logo -->
+      <div class="email-header" style="margin: 0; box-sizing: border-box; background: linear-gradient(
+          135deg,
+          #38a169 0%,
+          #2f855a 100%
+        ); padding: 40px 30px; text-align: center; color: #ffffff;">
+        <img src="https://res.cloudinary.com/dj5wmrycr/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1750437263/ChatGPT_Image_Apr_14_2025_01_24_04_PM_igj0ko.png" alt="Infrasoko Logo" class="logo" style="padding: 0; box-sizing: border-box; width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 20px; display: block; border: 3px solid rgba(255, 255, 255, 0.2);" width="80" height="80">
+        <h1 class="email-title" style="padding: 0; box-sizing: border-box; font-size: 28px; font-weight: 700; margin: 0; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">✅ Invoice Approved</h1>
+        <p class="email-subtitle" style="margin: 0; padding: 0; box-sizing: border-box; font-size: 16px; opacity: 0.9; margin-top: 8px;">Great news about your invoice</p>
+      </div>
+
+      <!-- Main Content -->
+      <div class="email-content" style="margin: 0; box-sizing: border-box; padding: 40px 30px;">
+        <div class="greeting" style="margin: 0; padding: 0; box-sizing: border-box; font-size: 18px; font-weight: 600; margin-bottom: 24px; color: #1f2937;">Hello {{issuerName}},</div>
+
+        <div class="content-section" style="margin: 0; padding: 0; box-sizing: border-box; margin-bottom: 32px;">
+          <p style="margin: 0; padding: 0; box-sizing: border-box;">
+            Great news! Your invoice <strong style="margin: 0; padding: 0; box-sizing: border-box;">#{{invoiceNumber}}</strong> for
+            project <strong style="margin: 0; padding: 0; box-sizing: border-box;">{{projectName}}</strong> has been approved.
+          </p>
+        </div>
+
+        <div class="alert-box success" style="box-sizing: border-box; padding: 20px; border-radius: 8px; margin: 24px 0; font-weight: 500; background-color: #f0fff4; border-left: 4px solid #38a169; color: #1f5b2f;">
+          <strong style="margin: 0; padding: 0; box-sizing: border-box;">🎉 Invoice Approved!</strong> Your invoice has been approved
+          and is now awaiting payment processing.
+        </div>
+
+        <div class="invoice-details-card" style="box-sizing: border-box; background-color: #f8fafc; border-radius: 12px; padding: 24px; margin: 24px 0; border-left: 4px solid #38a169;">
+          <h3 style="margin: 0; padding: 0; box-sizing: border-box; color: #38a169; font-size: 18px; font-weight: 600; margin-bottom: 16px;">Invoice Details</h3>
+          <div class="detail-row" style="margin: 0; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
+            <span class="detail-label" style="margin: 0; padding: 0; box-sizing: border-box; font-weight: 600; color: #6b7280; font-size: 14px;">Invoice Number:</span>
+            <span class="detail-value" style="margin: 0; padding: 0; box-sizing: border-box; color: #1f2937; font-weight: 500;">{{invoiceNumber}}</span>
+          </div>
+          <div class="detail-row" style="margin: 0; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
+            <span class="detail-label" style="margin: 0; padding: 0; box-sizing: border-box; font-weight: 600; color: #6b7280; font-size: 14px;">Amount:</span>
+            <span class="detail-value amount-highlight" style="margin: 0; padding: 0; box-sizing: border-box; color: #38a169; font-weight: 700; font-size: 18px;">${{invoiceAmount}}</span>
+          </div>
+          <div class="detail-row" style="margin: 0; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
+            <span class="detail-label" style="margin: 0; padding: 0; box-sizing: border-box; font-weight: 600; color: #6b7280; font-size: 14px;">Description:</span>
+            <span class="detail-value" style="margin: 0; padding: 0; box-sizing: border-box; color: #1f2937; font-weight: 500;">{{invoiceDescription}}</span>
+          </div>
+          <div class="detail-row" style="margin: 0; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
+            <span class="detail-label" style="margin: 0; padding: 0; box-sizing: border-box; font-weight: 600; color: #6b7280; font-size: 14px;">Work Period:</span>
+            <span class="detail-value" style="margin: 0; padding: 0; box-sizing: border-box; color: #1f2937; font-weight: 500;">{{workPeriodStart}} to {{workPeriodEnd}}</span>
+          </div>
+          <div class="detail-row" style="margin: 0; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
+            <span class="detail-label" style="margin: 0; padding: 0; box-sizing: border-box; font-weight: 600; color: #6b7280; font-size: 14px;">Approved By:</span>
+            <span class="detail-value" style="margin: 0; padding: 0; box-sizing: border-box; color: #1f2937; font-weight: 500;">{{updatedBy}}</span>
+          </div>
+          <div class="detail-row" style="margin: 0; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: none;">
+            <span class="detail-label" style="margin: 0; padding: 0; box-sizing: border-box; font-weight: 600; color: #6b7280; font-size: 14px;">Approved On:</span>
+            <span class="detail-value" style="margin: 0; padding: 0; box-sizing: border-box; color: #1f2937; font-weight: 500;">{{updatedDate}}</span>
+          </div>
+        </div>
+
+        <div class="content-section" style="margin: 0; padding: 0; box-sizing: border-box; margin-bottom: 32px;">
+          <p style="margin: 0; padding: 0; box-sizing: border-box;">
+            <strong style="margin: 0; padding: 0; box-sizing: border-box;">📧 Next Steps:</strong> You will be notified when payment
+            for this invoice has been processed.
+          </p>
+        </div>
+
+        <div style="padding: 0; box-sizing: border-box; text-align: center; margin: 32px 0;">
+          <a href="{{dashboardUrl}}" class="cta-button" style="margin: 0; box-sizing: border-box; display: inline-block; background: linear-gradient(
+          135deg,
+          #38a169 0%,
+          #2f855a 100%
+        ); text-decoration: none; padding: 16px 32px; border-radius: 8px; font-weight: 600; font-size: 16px; text-align: center; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(56, 161, 105, 0.3); color: #ffffff;">View Invoice Details</a>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="email-footer" style="margin: 0; box-sizing: border-box; background-color: #f8fafc; padding: 30px; text-align: center; border-top: 1px solid #e5e7eb;">
+        <div class="social-links" style="margin: 0; padding: 0; box-sizing: border-box; margin-bottom: 20px;">
+          <a href="#" class="social-link" style="padding: 0; box-sizing: border-box; display: inline-block; margin: 0 12px; color: #38a169; text-decoration: none; font-weight: 500; font-size: 14px;">Website</a>
+          <a href="#" class="social-link" style="padding: 0; box-sizing: border-box; display: inline-block; margin: 0 12px; color: #38a169; text-decoration: none; font-weight: 500; font-size: 14px;">Help Center</a>
+          <a href="#" class="social-link" style="padding: 0; box-sizing: border-box; display: inline-block; margin: 0 12px; color: #38a169; text-decoration: none; font-weight: 500; font-size: 14px;">Contact Support</a>
+        </div>
+        <div class="footer-text" style="margin: 0; padding: 0; box-sizing: border-box; color: #6b7280; font-size: 13px; line-height: 1.5;">
+          <p style="padding: 0; box-sizing: border-box; margin: 8px 0;">
+            This is an automated message from your project management system.
+          </p>
+          <p style="padding: 0; box-sizing: border-box; margin: 8px 0;">&copy; {{year}} Infrasoko. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

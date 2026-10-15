@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" style="margin: 0; padding: 0; box-sizing: border-box;">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget 100% Utilized</title>
+    <style>
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(229, 62, 62, 0.4);
+}
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .email-header {
+    padding: 30px 20px;
+  }
+
+  .email-content {
+    padding: 30px 20px;
+  }
+
+  .email-footer {
+    padding: 20px;
+  }
+
+  .critical-badge {
+    position: static;
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+
+  .cta-button {
+    display: block;
+    margin: 16px 0;
+  }
+}
+</style>
+  </head>
+  <body style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #1f2937; background-color: #f1f5f9; margin: 0; padding: 20px;">
+    <div class="email-wrapper" style="padding: 0; box-sizing: border-box; max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);">
+      <!-- Header with Logo -->
+      <div class="email-header" style="margin: 0; box-sizing: border-box; background: linear-gradient(
+          135deg,
+          #e53e3e 0%,
+          #c53030 100%
+        ); padding: 40px 30px; text-align: center; color: #ffffff; position: relative;">
+        <div class="critical-badge" style="margin: 0; box-sizing: border-box; position: absolute; top: 20px; right: 20px; background-color: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border: 2px solid rgba(255, 255, 255, 0.3);">CRITICAL</div>
+        <img src="https://res.cloudinary.com/dj5wmrycr/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1750437263/ChatGPT_Image_Apr_14_2025_01_24_04_PM_igj0ko.png" alt="Infrasoko Logo" class="logo" style="padding: 0; box-sizing: border-box; width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 20px; display: block; border: 3px solid rgba(255, 255, 255, 0.2);" width="80" height="80">
+        <h1 class="email-title" style="padding: 0; box-sizing: border-box; font-size: 28px; font-weight: 700; margin: 0; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">🚨 Critical Budget Alert</h1>
+        <p class="email-subtitle" style="margin: 0; padding: 0; box-sizing: border-box; font-size: 16px; opacity: 0.9; margin-top: 8px;">100% budget utilization reached</p>
+      </div>
+
+      <!-- Main Content -->
+      <div class="email-content" style="margin: 0; box-sizing: border-box; padding: 40px 30px;">
+        <div class="greeting" style="margin: 0; padding: 0; box-sizing: border-box; font-size: 18px; font-weight: 600; margin-bottom: 24px; color: #1f2937;">Hello {{ownerName}},</div>
+
+        <div class="alert-box critical" style="box-sizing: border-box; padding: 20px; border-radius: 8px; margin: 24px 0; font-weight: 500; background-color: #fef2f2; border-left: 4px solid #e53e3e; color: #991b1b;">
+          <strong style="margin: 0; padding: 0; box-sizing: border-box;">🚨 Critical Alert:</strong> Your project
+          <strong style="margin: 0; padding: 0; box-sizing: border-box;">{{projectName}}</strong> has reached 100% of the allocated
+          budget. Your budget has been fully utilized.
+        </div>
+
+        <div class="budget-details-card" style="box-sizing: border-box; background-color: #f8fafc; border-radius: 12px; padding: 24px; margin: 24px 0; border-left: 4px solid #e53e3e;">
+          <h3 style="margin: 0; padding: 0; box-sizing: border-box; color: #e53e3e; font-size: 18px; font-weight: 600; margin-bottom: 16px;">Budget Summary</h3>
+          <div class="detail-row" style="margin: 0; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
+            <span class="detail-label" style="margin: 0; padding: 0; box-sizing: border-box; font-weight: 600; color: #6b7280; font-size: 14px;">Total Budget:</span>
+            <span class="detail-value" style="margin: 0; padding: 0; box-sizing: border-box; color: #1f2937; font-weight: 500;">${{budgetAmount}}</span>
+          </div>
+          <div class="detail-row" style="margin: 0; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
+            <span class="detail-label" style="margin: 0; padding: 0; box-sizing: border-box; font-weight: 600; color: #6b7280; font-size: 14px;">Budget Used:</span>
+            <span class="detail-value percentage-highlight" style="margin: 0; padding: 0; box-sizing: border-box; color: #e53e3e; font-weight: 700; font-size: 18px;">{{usedPercentage}}%</span>
+          </div>
+          <div class="detail-row" style="margin: 0; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: none;">
+            <span class="detail-label" style="margin: 0; padding: 0; box-sizing: border-box; font-weight: 600; color: #6b7280; font-size: 14px;">Budget Remaining:</span>
+            <span class="detail-value" style="margin: 0; padding: 0; box-sizing: border-box; color: #1f2937; font-weight: 500;">${{remainingAmount}}</span>
+          </div>
+        </div>
+
+        <div class="progress-bar" style="padding: 0; box-sizing: border-box; width: 100%; height: 12px; background-color: #e5e7eb; border-radius: 6px; overflow: hidden; margin: 16px 0;">
+          <div class="progress-fill" style="margin: 0; padding: 0; box-sizing: border-box; height: 100%; background: linear-gradient(
+          135deg,
+          #e53e3e 0%,
+          #c53030 100%
+        ); width: 100%; border-radius: 6px;"></div>
+        </div>
+
+        <div class="content-section" style="margin: 0; padding: 0; box-sizing: border-box; margin-bottom: 32px;">
+          <p style="margin: 0; padding: 0; box-sizing: border-box;">
+            <strong style="margin: 0; padding: 0; box-sizing: border-box;">⚠️ Required Action:</strong> Immediate budget revision is
+            recommended. Any additional expenses will exceed your planned budget
+            for this project.
+          </p>
+        </div>
+
+        <div style="padding: 0; box-sizing: border-box; text-align: center; margin: 32px 0;">
+          <a href="{{budgetUrl}}" class="cta-button" style="margin: 0; box-sizing: border-box; display: inline-block; background: linear-gradient(
+          135deg,
+          #e53e3e 0%,
+          #c53030 100%
+        ); text-decoration: none; padding: 16px 32px; border-radius: 8px; font-weight: 600; font-size: 16px; text-align: center; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(229, 62, 62, 0.3); color: #ffffff;">Urgent Budget Review</a>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="email-footer" style="margin: 0; box-sizing: border-box; background-color: #f8fafc; padding: 30px; text-align: center; border-top: 1px solid #e5e7eb;">
+        <div class="social-links" style="margin: 0; padding: 0; box-sizing: border-box; margin-bottom: 20px;">
+          <a href="#" class="social-link" style="padding: 0; box-sizing: border-box; display: inline-block; margin: 0 12px; color: #e53e3e; text-decoration: none; font-weight: 500; font-size: 14px;">Website</a>
+          <a href="#" class="social-link" style="padding: 0; box-sizing: border-box; display: inline-block; margin: 0 12px; color: #e53e3e; text-decoration: none; font-weight: 500; font-size: 14px;">Help Center</a>
+          <a href="#" class="social-link" style="padding: 0; box-sizing: border-box; display: inline-block; margin: 0 12px; color: #e53e3e; text-decoration: none; font-weight: 500; font-size: 14px;">Contact Support</a>
+        </div>
+        <div class="footer-text" style="margin: 0; padding: 0; box-sizing: border-box; color: #6b7280; font-size: 13px; line-height: 1.5;">
+          <p style="padding: 0; box-sizing: border-box; margin: 8px 0;">
+            This is an automated message from your project management system.
+          </p>
+          <p style="padding: 0; box-sizing: border-box; margin: 8px 0;">&copy; {{year}} Infrasoko. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

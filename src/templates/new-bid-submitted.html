@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Bid Submitted</title>
+    
+</head>
+<body style="font-family: sans-serif; margin: 20px; background-color: #f8fafc;">
+    <div class="email-wrapper" style="max-width: 600px; margin: auto; background-color: #ffffff; border-radius: 8px; overflow: hidden;">
+        <div class="email-header" style="background-color: #059669; color: #ffffff; padding: 40px; text-align: center;">
+            <h1 class="email-title" style="font-size: 28px; font-weight: 700;">📥 New Bid Submitted</h1>
+        </div>
+        <div class="email-content" style="padding: 40px 30px;">
+            <div class="greeting" style="font-size: 18px; font-weight: 600; margin-bottom: 24px;">Hello {{tenderManagerName}},</div>
+            <p>A new bid has been submitted for a tender you are managing.</p>
+            <div class="info-card" style="background-color: #f0fff4; border-left: 4px solid #059669; padding: 20px; margin: 24px 0; border-radius: 8px;">
+                <h3>Submission Details</h3>
+                <p><strong>Tender Title:</strong> {{tenderTitle}}</p>
+                <p><strong>Tender Number:</strong> {{tenderNumber}}</p>
+                <p><strong>Bidder:</strong> {{bidderName}}</p>
+            </div>
+            <p>The bid is now available for review after the bid opening date.</p>
+            <div style="text-align: center; margin: 32px 0;">
+                <a href="{{bidLink}}" class="cta-button" style="display: inline-block; background-color: #059669; text-decoration: none; padding: 16px 32px; border-radius: 8px; font-weight: 600; color: #ffffff;">View Tender Bids</a>
+            </div>
+        </div>
+        <div class="email-footer" style="text-align: center; padding: 30px; font-size: 13px; color: #6b7280;">
+            <p>&copy; {{year}} Infrasoko. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>High Priority Material Request</title>
+    <style>
+      :root {
+        --primary-color: #e53e3e;
+        --secondary-color: #c53030;
+        --success-color: #38a169;
+        --warning-color: #ed8936;
+        --danger-color: #e53e3e;
+        --text-color: #1f2937;
+        --text-light: #6b7280;
+        --border-color: #e5e7eb;
+        --background-light: #f8fafc;
+        --white: #ffffff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: #f1f5f9;
+        margin: 0;
+        padding: 20px;
+      }
+
+      .email-wrapper {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: var(--white);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .email-header {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--secondary-color) 100%
+        );
+        padding: 40px 30px;
+        text-align: center;
+        color: var(--white);
+        position: relative;
+      }
+
+      .priority-badge {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: var(--white);
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .logo {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        display: block;
+        border: 3px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .email-title {
+        font-size: 28px;
+        font-weight: 700;
+        margin: 0;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .email-subtitle {
+        font-size: 16px;
+        opacity: 0.9;
+        margin-top: 8px;
+      }
+
+      .email-content {
+        padding: 40px 30px;
+      }
+
+      .greeting {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 24px;
+        color: var(--text-color);
+      }
+
+      .content-section {
+        margin-bottom: 32px;
+      }
+
+      .request-details-card {
+        background-color: var(--background-light);
+        border-radius: 12px;
+        padding: 24px;
+        margin: 24px 0;
+        border-left: 4px solid var(--primary-color);
+      }
+
+      .request-details-card h3 {
+        color: var(--primary-color);
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+
+      .detail-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 12px 0;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .detail-row:last-child {
+        border-bottom: none;
+      }
+
+      .detail-label {
+        font-weight: 600;
+        color: var(--text-light);
+        font-size: 14px;
+        min-width: 100px;
+      }
+
+      .detail-value {
+        color: var(--text-color);
+        font-weight: 500;
+        flex: 1;
+        text-align: right;
+      }
+
+      .materials-list {
+        background-color: #fef2f2;
+        border-left: 4px solid var(--primary-color);
+        padding: 16px;
+        border-radius: 8px;
+        margin: 16px 0;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--secondary-color) 100%
+        );
+        color: var(--white) !important;
+        text-decoration: none;
+        padding: 16px 32px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 16px;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(229, 62, 62, 0.3);
+        margin: 8px;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(229, 62, 62, 0.4);
+      }
+
+      .cta-button.secondary {
+        background: linear-gradient(135deg, var(--text-light) 0%, #4a5568 100%);
+        box-shadow: 0 4px 12px rgba(107, 114, 128, 0.3);
+      }
+
+      .button-container {
+        text-align: center;
+        margin: 32px 0;
+      }
+
+      .alert-box {
+        padding: 20px;
+        border-radius: 8px;
+        margin: 24px 0;
+        font-weight: 500;
+      }
+
+      .alert-box.urgent {
+        background-color: #fef2f2;
+        border-left: 4px solid var(--primary-color);
+        color: #991b1b;
+      }
+
+      .email-footer {
+        background-color: var(--background-light);
+        padding: 30px;
+        text-align: center;
+        border-top: 1px solid var(--border-color);
+      }
+
+      .social-links {
+        margin-bottom: 20px;
+      }
+
+      .social-link {
+        display: inline-block;
+        margin: 0 12px;
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 14px;
+      }
+
+      .footer-text {
+        color: var(--text-light);
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .footer-text p {
+        margin: 8px 0;
+      }
+
+      @media (max-width: 600px) {
+        body {
+          padding: 10px;
+        }
+
+        .email-header {
+          padding: 30px 20px;
+        }
+
+        .email-content {
+          padding: 30px 20px;
+        }
+
+        .email-footer {
+          padding: 20px;
+        }
+
+        .priority-badge {
+          position: static;
+          display: inline-block;
+          margin-bottom: 15px;
+        }
+
+        .cta-button {
+          display: block;
+          margin: 16px 0;
+        }
+
+        .detail-row {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .detail-value {
+          text-align: left;
+          margin-top: 4px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-wrapper">
+      <!-- Header with Logo -->
+      <div class="email-header">
+        <div class="priority-badge">HIGH PRIORITY</div>
+        <img
+          src="https://res.cloudinary.com/dj5wmrycr/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1750437263/ChatGPT_Image_Apr_14_2025_01_24_04_PM_igj0ko.png"
+          alt="Infrasoko Logo"
+          class="logo"
+        />
+        <h1 class="email-title">🚨 Material Request Alert</h1>
+        <p class="email-subtitle">Immediate attention required</p>
+      </div>
+
+      <!-- Main Content -->
+      <div class="email-content">
+        <div class="greeting">Hello {{ownerName}},</div>
+
+        <div class="content-section">
+          <p>
+            A new <strong>high priority</strong> material request has been
+            created for your project <strong>{{projectName}}</strong> by
+            {{requesterName}} from the {{department}} department.
+          </p>
+        </div>
+
+        <div class="request-details-card">
+          <h3>Request Details</h3>
+          <div class="detail-row">
+            <span class="detail-label">Requester:</span>
+            <span class="detail-value">{{requesterName}}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Department:</span>
+            <span class="detail-value">{{department}}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Purpose:</span>
+            <span class="detail-value">{{purpose}}</span>
+          </div>
+        </div>
+
+        <div class="materials-list">
+          <h4 style="color: var(--primary-color); margin-bottom: 12px">
+            📋 Materials Requested:
+          </h4>
+          <p style="font-weight: 500">{{materialList}}</p>
+        </div>
+
+        <div class="alert-box urgent">
+          <strong>⏰ Urgent Action Required:</strong> Since this request has
+          been marked as high priority, please review it and create a purchase
+          order as soon as possible to avoid project delays.
+        </div>
+
+        <div class="button-container">
+          <a href="{{requestLink}}" class="cta-button">View Request Details</a>
+          <a href="{{createPOLink}}" class="cta-button secondary"
+            >Create Purchase Order</a
+          >
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="email-footer">
+        <div class="social-links">
+          <a href="#" class="social-link">Website</a>
+          <a href="#" class="social-link">Help Center</a>
+          <a href="#" class="social-link">Contact Support</a>
+        </div>
+        <div class="footer-text">
+          <p>
+            This is an automated message from your project management system.
+          </p>
+          <p>&copy; {{year}} Infrasoko. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

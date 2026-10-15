@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Progress Report</title>
+    <style>
+      :root {
+        --primary-color: #3182ce;
+        --secondary-color: #2c5282;
+        --text-color: #1f2937;
+        --text-light: #6b7280;
+        --border-color: #e5e7eb;
+        --background-light: #f8fafc;
+        --white: #ffffff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: #f1f5f9;
+        margin: 0;
+        padding: 20px;
+      }
+
+      .email-wrapper {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: var(--white);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .email-header {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--secondary-color) 100%
+        );
+        padding: 40px 30px;
+        text-align: center;
+        color: var(--white);
+      }
+
+      .logo {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        display: block;
+        border: 3px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .email-title {
+        font-size: 28px;
+        font-weight: 700;
+        margin: 0;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .email-subtitle {
+        font-size: 16px;
+        opacity: 0.9;
+        margin-top: 8px;
+      }
+
+      .email-content {
+        padding: 40px 30px;
+      }
+
+      .greeting {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 24px;
+        color: var(--text-color);
+      }
+
+      .content-section {
+        margin-bottom: 32px;
+      }
+
+      .info-card {
+        background-color: var(--background-light);
+        border-radius: 12px;
+        padding: 24px;
+        margin: 24px 0;
+        border-left: 4px solid var(--primary-color);
+      }
+
+      .info-card h3 {
+        color: var(--primary-color);
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+
+      .progress-bar-container {
+        background-color: var(--border-color);
+        border-radius: 6px;
+        height: 12px;
+        width: 100%;
+        overflow: hidden;
+        margin-top: 8px;
+      }
+
+      .progress-bar {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--secondary-color) 100%
+        );
+        height: 100%;
+        border-radius: 6px;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--secondary-color) 100%
+        );
+        color: var(--white) !important;
+        text-decoration: none;
+        padding: 16px 32px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 16px;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(49, 130, 206, 0.3);
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(49, 130, 206, 0.4);
+      }
+
+      .email-footer {
+        background-color: var(--background-light);
+        padding: 30px;
+        text-align: center;
+        border-top: 1px solid var(--border-color);
+      }
+
+      .social-links {
+        margin-bottom: 20px;
+      }
+
+      .social-link {
+        display: inline-block;
+        margin: 0 12px;
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 14px;
+      }
+
+      .footer-text {
+        color: var(--text-light);
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .footer-text p {
+        margin: 8px 0;
+      }
+
+      @media (max-width: 600px) {
+        body {
+          padding: 10px;
+        }
+        .email-header,
+        .email-content {
+          padding: 30px 20px;
+        }
+        .email-footer {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-wrapper">
+      <!-- Header -->
+      <div class="email-header">
+        <img
+          src="https://res.cloudinary.com/dj5wmrycr/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1750437263/ChatGPT_Image_Apr_14_2025_01_24_04_PM_igj0ko.png"
+          alt="Infrasoko Logo"
+          class="logo"
+        />
+        <h1 class="email-title">📈 Project Progress Report</h1>
+        <p class="email-subtitle">{{projectName}}</p>
+      </div>
+
+      <!-- Main Content -->
+      <div class="email-content">
+        <div class="greeting">Hello {{ownerName}},</div>
+
+        <div class="content-section">
+          <p>
+            Here is the {{reportingPeriod}} progress report for your project.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Overall Progress: {{projectProgress}}%</h3>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: {{projectProgress}}%"></div>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <h4>Recent Comments:</h4>
+          <p style="color: var(--text-light); font-style: italic">
+            "{{comments}}"
+          </p>
+        </div>
+
+        <div style="text-align: center; margin: 32px 0">
+          <a href="{{projectUrl}}" class="cta-button">View Project Timeline</a>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="email-footer">
+        <div class="social-links">
+          <a href="#" class="social-link">Website</a>
+          <a href="#" class="social-link">Help Center</a>
+          <a href="#" class="social-link">Contact Support</a>
+        </div>
+        <div class="footer-text">
+          <p>
+            This is an automated report from your project management system.
+          </p>
+          <p>&copy; {{year}} Infrasoko. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

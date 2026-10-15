@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Response to Your Question</title>
+    
+</head>
+<body style="font-family: sans-serif; margin: 20px; background-color: #f8fafc;">
+    <div class="email-wrapper" style="max-width: 600px; margin: auto; background-color: #ffffff; border-radius: 8px; overflow: hidden;">
+        <div class="email-header" style="background-color: #3182ce; color: #ffffff; padding: 40px; text-align: center;">
+            <h1 class="email-title" style="font-size: 28px; font-weight: 700;">💡 Response to Your Question</h1>
+        </div>
+        <div class="email-content" style="padding: 40px 30px;">
+            <div class="greeting" style="font-size: 18px; font-weight: 600; margin-bottom: 24px;">Hello {{bidderName}},</div>
+            <p>A response has been provided for your question regarding the tender: <strong>{{tenderTitle}}</strong>.</p>
+            <div class="info-card" style="background-color: #eff6ff; border-left: 4px solid #3182ce; padding: 20px; margin: 24px 0; border-radius: 8px;">
+                <p><strong>Your Question:</strong> "{{question}}"</p>
+                <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 16px 0;">
+                <p><strong>Response:</strong> "{{response}}"</p>
+            </div>
+            <div style="text-align: center; margin: 32px 0;">
+                <a href="{{clarificationLink}}" class="cta-button" style="display: inline-block; background-color: #3182ce; text-decoration: none; padding: 16px 32px; border-radius: 8px; font-weight: 600; color: #ffffff;">View All Clarifications</a>
+            </div>
+        </div>
+        <div class="email-footer" style="text-align: center; padding: 30px; font-size: 13px; color: #6b7280;">
+            <p>&copy; {{year}} Infrasoko. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

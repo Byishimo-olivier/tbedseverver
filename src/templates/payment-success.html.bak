@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Successful</title>
+    <style>
+      :root {
+        --primary-color: #2563eb;
+        --success-color: #10b981;
+        --text-color: #1f2937;
+        --light-bg: #f3f4f6;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: var(--light-bg);
+      }
+
+      .email-container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .email-header {
+        background: linear-gradient(135deg, var(--success-color), #059669);
+        color: white;
+        padding: 40px 30px;
+        text-align: center;
+      }
+
+      .logo {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-bottom: 16px;
+      }
+
+      .email-title {
+        font-size: 28px;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      .email-content {
+        padding: 40px 30px;
+      }
+
+      .greeting {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 24px;
+      }
+
+      .success-box {
+        background-color: #f0fff4;
+        border-left: 4px solid var(--success-color);
+        padding: 20px;
+        border-radius: 8px;
+        margin: 24px 0;
+      }
+
+      .payment-details {
+        background-color: var(--light-bg);
+        border-radius: 8px;
+        padding: 24px;
+        margin: 24px 0;
+      }
+
+      .detail-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px 0;
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      .detail-row:last-child {
+        border-bottom: none;
+      }
+
+      .detail-label {
+        color: #6b7280;
+      }
+
+      .detail-value {
+        font-weight: 600;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--primary-color), #1d4ed8);
+        color: white;
+        padding: 14px 32px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        margin: 24px 0;
+      }
+
+      .email-footer {
+        background-color: var(--light-bg);
+        padding: 24px 30px;
+        text-align: center;
+        font-size: 14px;
+        color: #6b7280;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <div class="email-header">
+        <img
+          src="https://res.cloudinary.com/dj5wmrycr/image/upload/w_1000,ar_1:1,c_fill,g_auto/v1750437263/ChatGPT_Image_Apr_14_2025_01_24_04_PM_igj0ko.png"
+          alt="Infrasoko Logo"
+          class="logo"
+        />
+        <h1 class="email-title">✅ Payment Successful!</h1>
+      </div>
+
+      <div class="email-content">
+        <div class="greeting">Hello {{entityName}},</div>
+
+        <div class="success-box">
+          <strong>🎉 Your subscription has been activated!</strong>
+          <p style="margin-top: 8px">
+            Thank you for your payment. Your subscription is now active and you
+            have full access to all features.
+          </p>
+        </div>
+
+        <div class="payment-details">
+          <h3 style="margin-bottom: 16px">Payment Details</h3>
+          <div class="detail-row">
+            <span class="detail-label">Plan</span>
+            <span class="detail-value">{{planName}}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Amount</span>
+            <span class="detail-value">{{currency}} {{amount}}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Transaction ID</span>
+            <span class="detail-value">{{transactionId}}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Date</span>
+            <span class="detail-value">{{date}}</span>
+          </div>
+        </div>
+
+        <div style="text-align: center">
+          <a href="{{dashboardUrl}}" class="cta-button">Go to Dashboard</a>
+        </div>
+      </div>
+
+      <div class="email-footer">
+        <p>
+          This is an automated message from Infrasoko. Please do not reply to
+          this email.
+        </p>
+        <p>&copy; {{year}} Infrasoko. All rights reserved.</p>
+      </div>
+    </div>
+  </body>
+</html>

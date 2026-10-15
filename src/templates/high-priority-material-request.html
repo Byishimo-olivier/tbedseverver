@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" style="margin: 0; padding: 0; box-sizing: border-box;">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High Priority Material Request</title>
+    <style>
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(229, 62, 62, 0.4);
+}
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .email-header {
+    padding: 30px 20px;
+  }
+
+  .email-content {
+    padding: 30px 20px;
+  }
+
+  .email-footer {
+    padding: 20px;
+  }
+
+  .priority-badge {
+    position: static;
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+
+  .cta-button {
+    display: block;
+    margin: 16px 0;
+  }
+
+  .detail-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .detail-value {
+    text-align: left;
+    margin-top: 4px;
+  }
+}
+</style>
+  </head>
+  <body style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #1f2937; background-color: #f1f5f9; margin: 0; padding: 20px;">
+    <div class="email-wrapper" style="padding: 0; box-sizing: border-box; max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);">
+      <!-- Header with Logo -->
+      <div class="email-header" style="margin: 0; box-sizing: border-box; background: linear-gradient(
+          135deg,
+          #e53e3e 0%,
+          #c53030 100%
+        ); padding: 40px 30px; text-align: center; color: #ffffff; position: relative;">
+        <div class="priority-badge" style="margin: 0; box-sizing: border-box; position: absolute; top: 20px; right: 20px; background-color: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border: 2px solid rgba(255, 255, 255, 0.3);">HIGH PRIORITY</div>
+        <img src="https://res.cloudinary.com/dj5wmrycr/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1750437263/ChatGPT_Image_Apr_14_2025_01_24_04_PM_igj0ko.png" alt="Infrasoko Logo" class="logo" style="padding: 0; box-sizing: border-box; width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 20px; display: block; border: 3px solid rgba(255, 255, 255, 0.2);" width="80" height="80">
+        <h1 class="email-title" style="padding: 0; box-sizing: border-box; font-size: 28px; font-weight: 700; margin: 0; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">🚨 Material Request Alert</h1>
+        <p class="email-subtitle" style="margin: 0; padding: 0; box-sizing: border-box; font-size: 16px; opacity: 0.9; margin-top: 8px;">Immediate attention required</p>
+      </div>
+
+      <!-- Main Content -->
+      <div class="email-content" style="margin: 0; box-sizing: border-box; padding: 40px 30px;">
+        <div class="greeting" style="margin: 0; padding: 0; box-sizing: border-box; font-size: 18px; font-weight: 600; margin-bottom: 24px; color: #1f2937;">Hello {{ownerName}},</div>
+
+        <div class="content-section" style="margin: 0; padding: 0; box-sizing: border-box; margin-bottom: 32px;">
+          <p style="margin: 0; padding: 0; box-sizing: border-box;">
+            A new <strong style="margin: 0; padding: 0; box-sizing: border-box;">high priority</strong> material request has been
+            created for your project <strong style="margin: 0; padding: 0; box-sizing: border-box;">{{projectName}}</strong> by
+            {{requesterName}} from the {{department}} department.
+          </p>
+        </div>
+
+        <div class="request-details-card" style="box-sizing: border-box; background-color: #f8fafc; border-radius: 12px; padding: 24px; margin: 24px 0; border-left: 4px solid #e53e3e;">
+          <h3 style="margin: 0; padding: 0; box-sizing: border-box; color: #e53e3e; font-size: 18px; font-weight: 600; margin-bottom: 16px;">Request Details</h3>
+          <div class="detail-row" style="margin: 0; box-sizing: border-box; display: flex; justify-content: space-between; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
+            <span class="detail-label" style="margin: 0; padding: 0; box-sizing: border-box; font-weight: 600; color: #6b7280; font-size: 14px; min-width: 100px;">Requester:</span>
+            <span class="detail-value" style="margin: 0; padding: 0; box-sizing: border-box; color: #1f2937; font-weight: 500; flex: 1; text-align: right;">{{requesterName}}</span>
+          </div>
+          <div class="detail-row" style="margin: 0; box-sizing: border-box; display: flex; justify-content: space-between; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
+            <span class="detail-label" style="margin: 0; padding: 0; box-sizing: border-box; font-weight: 600; color: #6b7280; font-size: 14px; min-width: 100px;">Department:</span>
+            <span class="detail-value" style="margin: 0; padding: 0; box-sizing: border-box; color: #1f2937; font-weight: 500; flex: 1; text-align: right;">{{department}}</span>
+          </div>
+          <div class="detail-row" style="margin: 0; box-sizing: border-box; display: flex; justify-content: space-between; align-items: flex-start; padding: 12px 0; border-bottom: none;">
+            <span class="detail-label" style="margin: 0; padding: 0; box-sizing: border-box; font-weight: 600; color: #6b7280; font-size: 14px; min-width: 100px;">Purpose:</span>
+            <span class="detail-value" style="margin: 0; padding: 0; box-sizing: border-box; color: #1f2937; font-weight: 500; flex: 1; text-align: right;">{{purpose}}</span>
+          </div>
+        </div>
+
+        <div class="materials-list" style="box-sizing: border-box; background-color: #fef2f2; border-left: 4px solid #e53e3e; padding: 16px; border-radius: 8px; margin: 16px 0;">
+          <h4 style="margin: 0; padding: 0; box-sizing: border-box; color: #e53e3e; margin-bottom: 12px;">
+            📋 Materials Requested:
+          </h4>
+          <p style="margin: 0; padding: 0; box-sizing: border-box; font-weight: 500;">{{materialList}}</p>
+        </div>
+
+        <div class="alert-box urgent" style="box-sizing: border-box; padding: 20px; border-radius: 8px; margin: 24px 0; font-weight: 500; background-color: #fef2f2; border-left: 4px solid #e53e3e; color: #991b1b;">
+          <strong style="margin: 0; padding: 0; box-sizing: border-box;">⏰ Urgent Action Required:</strong> Since this request has
+          been marked as high priority, please review it and create a purchase
+          order as soon as possible to avoid project delays.
+        </div>
+
+        <div class="button-container" style="padding: 0; box-sizing: border-box; text-align: center; margin: 32px 0;">
+          <a href="{{requestLink}}" class="cta-button" style="box-sizing: border-box; display: inline-block; background: linear-gradient(
+          135deg,
+          #e53e3e 0%,
+          #c53030 100%
+        ); text-decoration: none; padding: 16px 32px; border-radius: 8px; font-weight: 600; font-size: 16px; text-align: center; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(229, 62, 62, 0.3); margin: 8px; color: #ffffff;">View Request Details</a>
+          <a href="{{createPOLink}}" class="cta-button secondary" style="box-sizing: border-box; display: inline-block; text-decoration: none; padding: 16px 32px; border-radius: 8px; font-weight: 600; font-size: 16px; text-align: center; transition: all 0.3s ease; margin: 8px; background: linear-gradient(135deg, #6b7280 0%, #4a5568 100%); box-shadow: 0 4px 12px rgba(107, 114, 128, 0.3); color: #ffffff;">Create Purchase Order</a>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="email-footer" style="margin: 0; box-sizing: border-box; background-color: #f8fafc; padding: 30px; text-align: center; border-top: 1px solid #e5e7eb;">
+        <div class="social-links" style="margin: 0; padding: 0; box-sizing: border-box; margin-bottom: 20px;">
+          <a href="#" class="social-link" style="padding: 0; box-sizing: border-box; display: inline-block; margin: 0 12px; color: #e53e3e; text-decoration: none; font-weight: 500; font-size: 14px;">Website</a>
+          <a href="#" class="social-link" style="padding: 0; box-sizing: border-box; display: inline-block; margin: 0 12px; color: #e53e3e; text-decoration: none; font-weight: 500; font-size: 14px;">Help Center</a>
+          <a href="#" class="social-link" style="padding: 0; box-sizing: border-box; display: inline-block; margin: 0 12px; color: #e53e3e; text-decoration: none; font-weight: 500; font-size: 14px;">Contact Support</a>
+        </div>
+        <div class="footer-text" style="margin: 0; padding: 0; box-sizing: border-box; color: #6b7280; font-size: 13px; line-height: 1.5;">
+          <p style="padding: 0; box-sizing: border-box; margin: 8px 0;">
+            This is an automated message from your project management system.
+          </p>
+          <p style="padding: 0; box-sizing: border-box; margin: 8px 0;">&copy; {{year}} Infrasoko. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

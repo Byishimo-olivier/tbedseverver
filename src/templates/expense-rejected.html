@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" style="margin: 0; padding: 0; box-sizing: border-box;">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Requires Revision</title>
+    
+  </head>
+  <body style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #1f2937; background-color: #f1f5f9; margin: 0; padding: 20px;">
+    <div class="email-wrapper" style="padding: 0; box-sizing: border-box; max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);">
+      <div class="email-header" style="margin: 0; box-sizing: border-box; background: linear-gradient(
+          135deg,
+          #e53e3e 0%,
+          #c53030 100%
+        ); padding: 40px 30px; text-align: center; color: #ffffff;">
+        <img src="https://res.cloudinary.com/dj5wmrycr/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1750437263/ChatGPT_Image_Apr_14_2025_01_24_04_PM_igj0ko.png" alt="Infrasoko Logo" class="logo" style="padding: 0; box-sizing: border-box; width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 20px; display: block; border: 3px solid rgba(255, 255, 255, 0.2);" width="80" height="80">
+        <h1 class="email-title" style="padding: 0; box-sizing: border-box; font-size: 28px; font-weight: 700; margin: 0; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">Expense Requires Revision</h1>
+      </div>
+      <div class="email-content" style="margin: 0; box-sizing: border-box; padding: 40px 30px;">
+        <div class="greeting" style="margin: 0; padding: 0; box-sizing: border-box; font-size: 18px; font-weight: 600; margin-bottom: 24px;">Hello {{userName}},</div>
+        <p style="margin: 0; padding: 0; box-sizing: border-box;">
+          An expense you submitted for project
+          <strong style="margin: 0; padding: 0; box-sizing: border-box;">{{projectName}}</strong> has been rejected and requires your
+          attention.
+        </p>
+        <div class="info-card" style="box-sizing: border-box; background-color: #f8fafc; border-radius: 12px; padding: 24px; margin: 24px 0; border-left: 4px solid #3182ce;">
+          <div class="detail-row" style="margin: 0; box-sizing: border-box; display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
+            <span class="detail-label" style="margin: 0; padding: 0; box-sizing: border-box; font-weight: 600; color: #6b7280;">Expense:</span>
+            <span style="margin: 0; padding: 0; box-sizing: border-box;">{{expenseDescription}}</span>
+          </div>
+          <div class="detail-row" style="margin: 0; box-sizing: border-box; display: flex; justify-content: space-between; padding: 12px 0; border-bottom: none;">
+            <span class="detail-label" style="margin: 0; padding: 0; box-sizing: border-box; font-weight: 600; color: #6b7280;">Amount:</span>
+            <span style="margin: 0; padding: 0; box-sizing: border-box;">${{expenseAmount}}</span>
+          </div>
+        </div>
+        <div class="alert-box" style="box-sizing: border-box; padding: 20px; border-radius: 8px; margin: 24px 0; border-left: 4px solid #e53e3e; background-color: #fff5f5; color: #c53030;">
+          <h4 style="margin: 0; padding: 0; box-sizing: border-box; margin-top: 0; margin-bottom: 10px; color: #9b2c2c;">Reviewer's Comments:</h4>
+          <p style="margin: 0; padding: 0; box-sizing: border-box;">{{comments}}</p>
+        </div>
+        <p style="margin: 0; padding: 0; box-sizing: border-box;">Please update the expense details and resubmit it for approval.</p>
+        <div style="padding: 0; box-sizing: border-box; text-align: center; margin: 32px 0;">
+          <a href="{{expenseLink}}" class="cta-button" style="margin: 0; box-sizing: border-box; display: inline-block; background-color: #3182ce; text-decoration: none; padding: 16px 32px; border-radius: 8px; font-weight: 600; color: #ffffff;">Revise Expense</a>
+        </div>
+      </div>
+      <div class="email-footer" style="margin: 0; box-sizing: border-box; padding: 30px; text-align: center; font-size: 13px; color: #6b7280; border-top: 1px solid #e5e7eb;">
+        <p style="margin: 0; padding: 0; box-sizing: border-box;">&copy; {{year}} Infrasoko. All rights reserved.</p>
+      </div>
+    </div>
+  </body>
+</html>
