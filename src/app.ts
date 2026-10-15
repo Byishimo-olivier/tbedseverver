@@ -32,9 +32,12 @@ import { biddingRouter } from "./modules/bidding/routes/bidding.routes";
 import { dashboardRouter } from "./modules/dashboard/dashboard.routes";
 import { subscriptionRouter } from "./modules/subscription/subscription.routes";
 import { uploadRouter } from "./modules/file/upload.routes";
-import "./modules/subscription/subscription.cron";
 import { sanitizeInput } from "./middleware/sanitize.middleware";
 import { authRateLimiter } from "./middleware/rateLimiter.middleware";
+
+if (process.env.VERCEL !== "1") {
+  require("./modules/subscription/subscription.cron");
+}
 
 // // Configure Cloudinary
 // configureCloudinary();
@@ -62,6 +65,26 @@ app.use(
     ],
   })
 );
+app.use(async (req, res, next) => {
+  if (
+    process.env.VERCEL !== "1" ||
+    req.method === "OPTIONS" ||
+    req.path === "/health"
+  ) {
+    return next();
+  }
+
+  try {
+    await connectDatabase();
+    return next();
+  } catch (error) {
+    logger.error("MongoDB connection unavailable:", error);
+    return res.status(503).json({
+      success: false,
+      message: "Service temporarily unavailable",
+    });
+  }
+});
 app.use(express.json({ limit: '50mb',}));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
 app.use(sanitizeInput);
@@ -146,7 +169,9 @@ export const setupErrorHandlers = () => {
   });
 };
 
-setupErrorHandlers();
-startServer();
+if (process.env.VERCEL !== "1") {
+  setupErrorHandlers();
+  startServer();
+}
 
 export default app;
